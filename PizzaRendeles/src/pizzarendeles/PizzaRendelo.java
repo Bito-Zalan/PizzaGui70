@@ -29,6 +29,7 @@ public class PizzaRendelo extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         BtnRendeles = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -38,26 +39,36 @@ public class PizzaRendelo extends javax.swing.JFrame {
         lblMeretSonkas = new javax.swing.JLabel();
         spinnerSonkas = new javax.swing.JSpinner();
         lblSonkasKukoricas = new javax.swing.JLabel();
-        cmbMeretSonkas = new javax.swing.JComboBox<>();
         cmbSzoszSonkas = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
-        lblSzoszSzalamis = new javax.swing.JLabel();
-        lblMeretSzalamis = new javax.swing.JLabel();
-        spinnerSzalamis = new javax.swing.JSpinner();
-        lblSzalamisSajtos = new javax.swing.JLabel();
-        cmbMeretSzalamis = new javax.swing.JComboBox<>();
-        cmbSzoszSzalamis = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
-        lblSzosz2 = new javax.swing.JLabel();
-        lblMeret2 = new javax.swing.JLabel();
-        jSpinner5 = new javax.swing.JSpinner();
-        jLabel7 = new javax.swing.JLabel();
-        cmboxMeret2 = new javax.swing.JComboBox<>();
-        cmboxSzosz2 = new javax.swing.JComboBox<>();
+        rdbSonkas60cm = new javax.swing.JRadioButton();
+        rdbSonkas32cm = new javax.swing.JRadioButton();
+        rdbSonkas45cm = new javax.swing.JRadioButton();
         BtnMegse = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lblSzoszSzalamis = new javax.swing.JLabel();
+        lblMeretSzalamis = new javax.swing.JLabel();
+        spinnerSzalamis = new javax.swing.JSpinner();
+        lblSzalamis = new javax.swing.JLabel();
+        cmbSzoszSzalamis = new javax.swing.JComboBox<>();
+        rdbSzalamis60cm = new javax.swing.JRadioButton();
+        rdbSzalamis32cm = new javax.swing.JRadioButton();
+        rdbSzalamis45cm = new javax.swing.JRadioButton();
+        jPanel5 = new javax.swing.JPanel();
+        lblSzoszSonkas2 = new javax.swing.JLabel();
+        lblMeretSonkas2 = new javax.swing.JLabel();
+        spinnerSonkas2 = new javax.swing.JSpinner();
+        lblSonkasKukoricas2 = new javax.swing.JLabel();
+        cmbSzoszSonkas2 = new javax.swing.JComboBox<>();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -89,7 +100,7 @@ public class PizzaRendelo extends javax.swing.JFrame {
         lblSzoszSonkas.setText("Szósz:");
 
         lblMeretSonkas.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblMeretSonkas.setText("Méret:");
+        lblMeretSonkas.setText("Méret");
 
         spinnerSonkas.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         spinnerSonkas.setModel(new javax.swing.SpinnerNumberModel(0, 0, 3, 1));
@@ -97,18 +108,18 @@ public class PizzaRendelo extends javax.swing.JFrame {
 
         lblSonkasKukoricas.setText("Sonkás kukoricás");
 
-        cmbMeretSonkas.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        cmbMeretSonkas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nincs méret kiválasztva!", "32 cm  Ár:1490 Ft", "45 cm  Ár: 2290 Ft", "60 cm  Ár: 4390 Ft" }));
-        cmbMeretSonkas.setBorder(null);
-        cmbMeretSonkas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMeretSonkasActionPerformed(evt);
-            }
-        });
-
         cmbSzoszSonkas.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         cmbSzoszSonkas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alapszósz: Paradicsomos", "Fokhagymás szósz", "Tzaziki szósz" }));
         cmbSzoszSonkas.setBorder(null);
+
+        buttonGroup1.add(rdbSonkas60cm);
+        rdbSonkas60cm.setText("60 cm");
+
+        buttonGroup1.add(rdbSonkas32cm);
+        rdbSonkas32cm.setText("32 cm");
+
+        buttonGroup1.add(rdbSonkas45cm);
+        rdbSonkas45cm.setText("45 cm");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,21 +127,28 @@ public class PizzaRendelo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblSonkasKukoricas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(spinnerSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblSzoszSonkas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbSzoszSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMeretSonkas)
-                            .addComponent(lblSzoszSonkas, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
+                        .addComponent(rdbSonkas32cm)
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbSzoszSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbMeretSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(rdbSonkas45cm)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                                .addComponent(rdbSonkas60cm))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(lblMeretSonkas)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,153 +158,17 @@ public class PizzaRendelo extends javax.swing.JFrame {
                     .addComponent(spinnerSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSonkasKukoricas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMeretSonkas)
+                .addGap(1, 1, 1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbMeretSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMeretSonkas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(rdbSonkas60cm)
+                    .addComponent(rdbSonkas32cm)
+                    .addComponent(rdbSonkas45cm))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbSzoszSonkas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSzoszSonkas))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        lblSzoszSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblSzoszSzalamis.setText("Szósz:");
-
-        lblMeretSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblMeretSzalamis.setText("Méret:");
-
-        spinnerSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        spinnerSzalamis.setModel(new javax.swing.SpinnerNumberModel(0, 0, 3, 1));
-        spinnerSzalamis.setBorder(null);
-
-        lblSzalamisSajtos.setText("Szalámis sajtos");
-
-        cmbMeretSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        cmbMeretSzalamis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nincs méret kiválasztva!", "45 cm  Ár: 2290 Ft", "60 cm  Ár: 4390 Ft" }));
-        cmbMeretSzalamis.setBorder(null);
-        cmbMeretSzalamis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMeretSzalamisActionPerformed(evt);
-            }
-        });
-
-        cmbSzoszSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        cmbSzoszSzalamis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alapszósz: Paradicsomos", "Fokhagymás szósz", "Tzaziki szósz" }));
-        cmbSzoszSzalamis.setBorder(null);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(lblSzalamisSajtos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(spinnerSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMeretSzalamis)
-                            .addComponent(lblSzoszSzalamis, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbSzoszSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbMeretSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spinnerSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSzalamisSajtos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbMeretSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMeretSzalamis))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbSzoszSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSzoszSzalamis))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        lblSzosz2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblSzosz2.setText("Szósz:");
-        lblSzosz2.setEnabled(false);
-
-        lblMeret2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblMeret2.setText("Méret:");
-        lblMeret2.setEnabled(false);
-
-        jSpinner5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jSpinner5.setBorder(null);
-        jSpinner5.setEnabled(false);
-
-        jLabel7.setText("Magyaros");
-        jLabel7.setEnabled(false);
-
-        cmboxMeret2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        cmboxMeret2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nincs méret kiválasztva!", "32 cm", "45 cm", "60 cm" }));
-        cmboxMeret2.setBorder(null);
-        cmboxMeret2.setEnabled(false);
-        cmboxMeret2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmboxMeret2ActionPerformed(evt);
-            }
-        });
-
-        cmboxSzosz2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        cmboxSzosz2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nincs szósz kiválasztva!", "Paradicsomos szósz", "Fokhagymás szósz", "Tzaziki szósz" }));
-        cmboxSzosz2.setBorder(null);
-        cmboxSzosz2.setEnabled(false);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMeret2)
-                            .addComponent(lblSzosz2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmboxSzosz2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmboxMeret2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmboxMeret2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMeret2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmboxSzosz2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSzosz2))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         BtnMegse.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -306,43 +188,223 @@ public class PizzaRendelo extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PizzaKepek/szalámis.png"))); // NOI18N
         jLabel8.setText("jLabel8");
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        lblSzoszSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lblSzoszSzalamis.setText("Szósz:");
+
+        lblMeretSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lblMeretSzalamis.setText("Méret");
+
+        spinnerSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        spinnerSzalamis.setModel(new javax.swing.SpinnerNumberModel(0, 0, 3, 1));
+        spinnerSzalamis.setBorder(null);
+
+        lblSzalamis.setText("Szalámis sajtos");
+
+        cmbSzoszSzalamis.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        cmbSzoszSzalamis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alapszósz: Paradicsomos", "Fokhagymás szósz", "Tzaziki szósz" }));
+        cmbSzoszSzalamis.setBorder(null);
+
+        buttonGroup2.add(rdbSzalamis60cm);
+        rdbSzalamis60cm.setText("60 cm");
+
+        buttonGroup2.add(rdbSzalamis32cm);
+        rdbSzalamis32cm.setText("32 cm");
+
+        buttonGroup2.add(rdbSzalamis45cm);
+        rdbSzalamis45cm.setText("45 cm");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lblSzalamis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(spinnerSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(lblSzoszSzalamis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbSzoszSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(rdbSzalamis32cm)
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(rdbSzalamis45cm)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                                .addComponent(rdbSzalamis60cm))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(lblMeretSzalamis)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spinnerSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSzalamis))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMeretSzalamis)
+                .addGap(1, 1, 1)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbSzalamis60cm)
+                    .addComponent(rdbSzalamis32cm)
+                    .addComponent(rdbSzalamis45cm))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbSzoszSzalamis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSzoszSzalamis))
+                .addContainerGap())
+        );
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        lblSzoszSonkas2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lblSzoszSonkas2.setText("Szósz:");
+        lblSzoszSonkas2.setEnabled(false);
+
+        lblMeretSonkas2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lblMeretSonkas2.setText("Méret");
+        lblMeretSonkas2.setEnabled(false);
+
+        spinnerSonkas2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        spinnerSonkas2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 3, 1));
+        spinnerSonkas2.setBorder(null);
+        spinnerSonkas2.setEnabled(false);
+
+        lblSonkasKukoricas2.setText("Magyaros");
+        lblSonkasKukoricas2.setEnabled(false);
+
+        cmbSzoszSonkas2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        cmbSzoszSonkas2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alapszósz: Paradicsomos", "Fokhagymás szósz", "Tzaziki szósz" }));
+        cmbSzoszSonkas2.setBorder(null);
+        cmbSzoszSonkas2.setEnabled(false);
+
+        buttonGroup1.add(jRadioButton7);
+        jRadioButton7.setText("60 cm");
+        jRadioButton7.setEnabled(false);
+
+        buttonGroup1.add(jRadioButton8);
+        jRadioButton8.setText("32 cm");
+        jRadioButton8.setEnabled(false);
+
+        buttonGroup1.add(jRadioButton9);
+        jRadioButton9.setText("45 cm");
+        jRadioButton9.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(lblSonkasKukoricas2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(spinnerSonkas2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(lblSzoszSonkas2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbSzoszSonkas2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jRadioButton8)
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jRadioButton9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                                .addComponent(jRadioButton7))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(lblMeretSonkas2)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spinnerSonkas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSonkasKukoricas2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMeretSonkas2)
+                .addGap(1, 1, 1)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton7)
+                    .addComponent(jRadioButton8)
+                    .addComponent(jRadioButton9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbSzoszSonkas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSzoszSonkas2))
+                .addContainerGap())
+        );
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jLabel1.setText("Ártábla");
+
+        jLabel6.setText("32 cm Pizza: 1290 Ft");
+
+        jLabel7.setText("45 cm Pizza: 3290 Ft");
+
+        jLabel9.setText("60 cm Pizza: 4290 Ft");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(65, 65, 65)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(BtnRendeles)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(BtnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6)
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(jLabel9))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField1)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(BtnRendeles)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(BtnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,17 +413,24 @@ public class PizzaRendelo extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(29, 29, 29)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -369,7 +438,7 @@ public class PizzaRendelo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnMegse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnRendeles, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -379,50 +448,39 @@ public class PizzaRendelo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnRendelesMouseEntered
 
-    private void cmbMeretSonkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMeretSonkasActionPerformed
-        String meret = (String) cmbMeretSonkas.getSelectedItem();
-        JOptionPane.showMessageDialog(rootPane, "A kiválasztott méret: "  +meret);
-        
-          
-        
-    }//GEN-LAST:event_cmbMeretSonkasActionPerformed
-
-    private void cmbMeretSzalamisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMeretSzalamisActionPerformed
-        String meret = (String) cmbMeretSzalamis.getSelectedItem();
-        JOptionPane.showMessageDialog(rootPane, "A kiválasztott méret: "  +meret);
-    }//GEN-LAST:event_cmbMeretSzalamisActionPerformed
-
-    private void cmboxMeret2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmboxMeret2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmboxMeret2ActionPerformed
-
     private void BtnRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRendelesActionPerformed
+        int mennyisegSonka = (int)spinnerSonkas.getValue();
+        int mennyisegSzalami = (int)spinnerSzalamis.getValue();
+        int eredmeny = 0;
+        int ar32cm = 1290;
+        int ar45cm = 3290;
+        int ar60cm = 4290;
         
-        boolean vanMeretValasztvaSonkas = cmbMeretSonkas.getSelectedIndex() >0;
-        boolean vanMeretValasztvaSzalamis = cmbMeretSzalamis.getSelectedIndex() > 0;
         
-        String uzenet, cim = "Sikeres rendelés";
-        
-        if (vanMeretValasztvaSonkas || vanMeretValasztvaSzalamis){
-     
-            cim += " - méret megadva!";
-            uzenet = "A rendelést sikeresen rögzítettük!";
-        }else {
-            cim = "HIBA";
-            uzenet = "Nincs méret kiválasztva!";   
+        if (mennyisegSonka == 0 &&  mennyisegSzalami == 0){
+        JOptionPane.showMessageDialog(rootPane, "0 db pizzát nem lehet rendelni!");
+    }else
+        if (rdbSonkas32cm.isSelected()) {
+            eredmeny += ar32cm;
+        } else if (rdbSonkas45cm.isSelected()) {
+            eredmeny += ar45cm;
+        } else if (rdbSonkas60cm.isSelected()) {
+            eredmeny += ar60cm;
+        } 
+        if (rdbSzalamis32cm.isSelected()) {
+            eredmeny += ar32cm;
+        } else if (rdbSzalamis45cm.isSelected()) {
+            eredmeny += ar45cm;
+        } else if (rdbSzalamis60cm.isSelected()) {
+            eredmeny += ar60cm;
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Kötelező méretet választani!");
         }
         
-        int sonkasErtek = (int) spinnerSonkas.getValue();
-        int szalamisErtek = (int) spinnerSzalamis.getValue();
+        JOptionPane.showMessageDialog(rootPane, "Rendelés leadva! Végösszeg: " + (eredmeny * (mennyisegSonka + mennyisegSzalami)) + " Ft.");
         
-        if (sonkasErtek == 0 && szalamisErtek == 0){
-            JOptionPane.showMessageDialog(null, "0 db Pizza nem rendelhető!");
-            
-    
-        }else{
-            JOptionPane.showMessageDialog(null, "Rendelés leadva! ");
-        }
-        JOptionPane.showMessageDialog(null, uzenet, cim, 0);
+        
+        
         
     }//GEN-LAST:event_BtnRendelesActionPerformed
 
@@ -470,32 +528,43 @@ public class PizzaRendelo extends javax.swing.JFrame {
     private javax.swing.JButton BtnMegse;
     private javax.swing.JButton BtnRendeles;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> cmbMeretSonkas;
-    private javax.swing.JComboBox<String> cmbMeretSzalamis;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cmbSzoszSonkas;
+    private javax.swing.JComboBox<String> cmbSzoszSonkas2;
     private javax.swing.JComboBox<String> cmbSzoszSzalamis;
-    private javax.swing.JComboBox<String> cmboxMeret2;
-    private javax.swing.JComboBox<String> cmboxSzosz2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JSpinner jSpinner5;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblMeret2;
     private javax.swing.JLabel lblMeretSonkas;
+    private javax.swing.JLabel lblMeretSonkas2;
     private javax.swing.JLabel lblMeretSzalamis;
     private javax.swing.JLabel lblSonkasKukoricas;
-    private javax.swing.JLabel lblSzalamisSajtos;
-    private javax.swing.JLabel lblSzosz2;
+    private javax.swing.JLabel lblSonkasKukoricas2;
+    private javax.swing.JLabel lblSzalamis;
     private javax.swing.JLabel lblSzoszSonkas;
+    private javax.swing.JLabel lblSzoszSonkas2;
     private javax.swing.JLabel lblSzoszSzalamis;
+    private javax.swing.JRadioButton rdbSonkas32cm;
+    private javax.swing.JRadioButton rdbSonkas45cm;
+    private javax.swing.JRadioButton rdbSonkas60cm;
+    private javax.swing.JRadioButton rdbSzalamis32cm;
+    private javax.swing.JRadioButton rdbSzalamis45cm;
+    private javax.swing.JRadioButton rdbSzalamis60cm;
     private javax.swing.JSpinner spinnerSonkas;
+    private javax.swing.JSpinner spinnerSonkas2;
     private javax.swing.JSpinner spinnerSzalamis;
     // End of variables declaration//GEN-END:variables
 }
