@@ -449,6 +449,9 @@ public class PizzaRendelo extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnRendelesMouseEntered
 
     private void BtnRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRendelesActionPerformed
+        
+        JOptionPane.showMessageDialog(rootPane, "Tesztverzió!");
+        
         int mennyisegSonka = (int)spinnerSonkas.getValue();
         int mennyisegSzalami = (int)spinnerSzalamis.getValue();
         int eredmeny = 0;
